@@ -53,8 +53,8 @@
       }
 
       function resize() {
-        painting.width = window.innerWidth
-        painting.height = window.innerHeight
+        painting.width = window.innerWidth * 3
+        painting.height = window.innerHeight * 3
         socket.emit('refresh')
       }
 
