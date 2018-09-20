@@ -28,7 +28,7 @@
       })
       painting.addEventListener('mousemove', (e) => {
         if (!brush.down) return
-        strokes.push({ x0: brush.x, y0: brush.y, x1: e.clientX, y1: e.clientY })
+        strokes.push({ x0: brush.x, y0: brush.y, x1: e.clientXa, y1: e.clientY })
         Object.assign(brush, { x: e.clientX, y: e.clientY })
       })
       window.addEventListener('resize', queueResize)
@@ -53,8 +53,8 @@
       }
 
       function resize() {
-        painting.width = window.innerWidth * 3
-        painting.height = window.innerHeight * 3
+        painting.width = window.innerWidth
+        painting.height = window.innerHeight
         socket.emit('refresh')
       }
 
